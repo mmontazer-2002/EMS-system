@@ -10,19 +10,20 @@
              namespace="/"
              extends="struts-default">
 
-        <action name="login"
-                class="ir.gam.action.LoginAction">
+        <action name="login" class="ir.gam.action.LoginAction">
+            <result name="success">/pages/dashboard.jsp</result>
+            <result name="error">/pages/login.jsp</result>
+        </action>
 
-            <result name="success">
-                dashboard.jsp
-            </result>
+        <action name="employeeForm">
+            <result>/pages/employee-form.jsp</result>
+        </action>
 
-            <result name="error">
-                login.jsp
-            </result>
-
+        <action name="save" class="ir.gam.action.EmployeeAction" method="save">
+            <result name="success">/pages/success.jsp</result>
         </action>
 
     </package>
+
 
 </struts>

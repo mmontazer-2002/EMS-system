@@ -7,7 +7,7 @@
          version="3.1">
 
     <display-name>
-        Legacy Employee Management System
+        Employee Management System
     </display-name>
 
     <filter>
@@ -24,7 +24,7 @@
     </filter-mapping>
 
     <welcome-file-list>
-        <welcome-file>login.action</welcome-file>
+        <welcome-file>/WEB-INF/pages/index.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
