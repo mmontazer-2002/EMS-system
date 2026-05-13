@@ -6,9 +6,7 @@
 
 <struts>
 
-    <package name="default"
-             namespace="/"
-             extends="struts-default">
+    <package name="default" namespace="/" extends="struts-default">
 
         <action name="login" class="ir.gam.action.LoginAction">
             <result name="success">/pages/dashboard.jsp</result>

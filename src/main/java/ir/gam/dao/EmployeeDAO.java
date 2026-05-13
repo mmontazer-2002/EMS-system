@@ -4,16 +4,28 @@ import ir.gam.model.Employee;
 import ir.gam.utility.HibernateUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class EmployeeDAO {
 
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeDAO.class);
+
     //this method simply save an employee
     public void save(Employee employee) {
-        Session session = HibernateUtils.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        session.save(employee);
+        Transaction tx = null;
+        try(Session session = HibernateUtils.getSessionFactory().openSession()){
+            tx = session.beginTransaction();
+            session.save(employee);
+            tx.commit();
+            logger.info("Employee successfully saved");
+        }catch (Exception e){
+
+        }
+
+
 
         tx.commit();
         session.close();
@@ -60,6 +72,9 @@ public class EmployeeDAO {
         return list;
     }
 
+    private void rollback(Transaction tx){
+        try(){
 
-
+        }catch()
+    }
 }
