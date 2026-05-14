@@ -12,12 +12,9 @@ public class LoginAction extends ActionSupport {
 
     @Override
     public String execute() {
-
-        if ("admin".equals(username)
-                && "admin".equals(password)) {
-            return "success";
+        if ("admin".equals(username) && "admin".equals(password)) {
+            return SUCCESS;
         }
-
-        return "error";
+        return ERROR;
     }
 }
