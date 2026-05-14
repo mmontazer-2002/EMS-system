@@ -5,6 +5,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtils {
 
+    //using the singleton design pattern for the usage in all the application
     private static SessionFactory sessionFactory;
 
     static {
