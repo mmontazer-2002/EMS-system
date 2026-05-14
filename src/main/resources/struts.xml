@@ -8,20 +8,48 @@
 
     <package name="default" namespace="/" extends="struts-default">
 
-        <action name="login" class="ir.gam.action.LoginAction">
+        <!-- LOGIN PAGE -->
+        <action name="login">
+            <result>/login.jsp</result>
+        </action>
+
+        <!-- LOGIN PROCESS -->
+        <action name="doLogin" class="ir.gam.action.LoginAction">
+            <result name="success" type="redirectAction"> dashboard </result>
+            <result name="error">/pages/error.jsp</result>
+        </action>
+
+        <!-- DASHBOARD -->
+        <action name="dashboard" class="ir.gam.action.EmployeeAction" method="list">
             <result name="success">/pages/dashboard.jsp</result>
-            <result name="error">/pages/login.jsp</result>
+            <result name="error">/login-error.jsp</result>
         </action>
 
-        <action name="employeeForm">
-            <result>/pages/employee-form.jsp</result>
+        <!-- SAVE EMPLOYEE -->
+        <action name="saveEmployee" class="ir.gam.action.EmployeeAction" method="save">
+            <result name="success" type="redirectAction">dashboard</result>
+            <result name="error">/pages/error.jsp</result>
         </action>
 
-        <action name="save" class="ir.gam.action.EmployeeAction" method="save">
-            <result name="success">/pages/success.jsp</result>
+        <!-- DELETE EMPLOYEE -->
+
+        <action name="deleteEmployee" class="ir.gam.action.EmployeeAction" method="delete">
+            <result name="success" type="redirectAction">dashboard</result>
+            <result name="error">/pages/error.jsp</result>
         </action>
 
+        <!-- EDIT PAGE -->
+        <action name="editEmployee" class="ir.gam.action.EmployeeAction" method="edit">
+            <result name="success">/pages/edit-employee.jsp</result>
+            <result name="error">/pages/error.jsp</result>
+        </action>
+
+        <!-- UPDATE EMPLOYEE -->
+        <action name="updateEmployee" class="ir.gam.action.EmployeeAction" method="update">
+            <result name="success" type="redirectAction">dashboard</result>
+            <result name="error">/pages/error.jsp</result>
+        </action>
     </package>
 
-
 </struts>
+

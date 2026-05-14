@@ -1,15 +1,15 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<html>
 
+<html>
 <head>
     <title>Login</title>
 </head>
 
 <body>
 
-<h2>Login Page</h2>
+<h2>Employee Management Login</h2>
 
-<s:form action="login">
+<s:form action="doLogin">
 
     <s:textfield
             name="username"
@@ -23,6 +23,7 @@
 
 </s:form>
 
-</body>
+<s:actionerror/>
 
+</body>
 </html>
