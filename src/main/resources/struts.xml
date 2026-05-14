@@ -32,14 +32,13 @@
         </action>
 
         <!-- DELETE EMPLOYEE -->
-
         <action name="deleteEmployee" class="ir.gam.action.EmployeeAction" method="delete">
             <result name="success" type="redirectAction">dashboard</result>
             <result name="error">/pages/error.jsp</result>
         </action>
 
         <!-- EDIT PAGE -->
-        <action name="editEmployee" class="ir.gam.action.EmployeeAction" method="edit">
+        <action name="editEmployee" class="ir.gam.action.EmployeeAction" method="retrieves">
             <result name="success">/pages/edit-employee.jsp</result>
             <result name="error">/pages/error.jsp</result>
         </action>

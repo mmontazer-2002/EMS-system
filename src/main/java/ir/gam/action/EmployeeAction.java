@@ -21,7 +21,7 @@ public class EmployeeAction extends ActionSupport {
     private int id;
     private List<Employee> employees;
 
-    //
+    //the action method for saving the new employee
     public String save() {
         try {
             dao.save(employee);
@@ -35,6 +35,7 @@ public class EmployeeAction extends ActionSupport {
         }
     }
 
+    //the action method for getting the list of the employees
     public String list() {
         try {
             employees = dao.getAll();
@@ -47,6 +48,7 @@ public class EmployeeAction extends ActionSupport {
         }
     }
 
+    //the action method for deleting an employees
     public String delete() {
         try {
             dao.delete(id);
@@ -59,7 +61,8 @@ public class EmployeeAction extends ActionSupport {
         }
     }
 
-    public String edit() {
+    //the action method for retrieving the employees data in the UI
+    public String retrieves() {
         try {
             employee = dao.getById(id);
             if (employee == null) {
@@ -75,6 +78,7 @@ public class EmployeeAction extends ActionSupport {
         }
     }
 
+    //the action method for updating the data of an employee
     public String update() {
         try {
             dao.update(employee);
