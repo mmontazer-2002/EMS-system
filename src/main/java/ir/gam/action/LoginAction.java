@@ -15,6 +15,7 @@ public class LoginAction extends ActionSupport {
         if ("admin".equals(username) && "admin".equals(password)) {
             return SUCCESS;
         }
+        addActionError("Invalid username or password.");
         return ERROR;
     }
 }

@@ -10,7 +10,7 @@
 
 <body>
 
-<h1>Username or password are incorrect!!!</h1>
+<h1> Username or password are incorrect!!!</h1>
 
 <hr/>
 
@@ -18,7 +18,7 @@
 
 <br/>
 
-<a href="doLogin">
+<a href="login">
 
     Back To Login
 
